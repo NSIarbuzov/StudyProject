@@ -22,6 +22,7 @@ public class MaxMinAvg {
         System.out.println("max = " + String.format("%.2f", max));
         System.out.println("min = " + String.format("%.2f", min));
         System.out.println("avg = " + String.format("%.2f", avg));
+        System.out.println("HI!");
 
     }
 }
