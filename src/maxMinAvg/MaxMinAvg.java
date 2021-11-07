@@ -1,27 +1,37 @@
 package maxMinAvg;
 
+import java.util.Arrays;
+
 public class MaxMinAvg {
     public static void main(String[] args) {
-        double[] array = new double[10];
+        int a = 0;
+        int b = 100;
+        int[] array = new int[10];
         for (int i = 0; i < array.length; i++) {
-            array[i] = Math.random();
+            array[i] = (int) Math.round(Math.random() * (b - a)) + a;
+            System.out.print(array[i] + " ");
 
         }
 
-        double max = array[0];
-        double min = array[0];
-        double avg = 0;
-        for (double v : array) {
-            if (max < v)
-                max = v;
-            if (min > v)
-                min = v;
-            avg += v / array.length;
-        }
+        int min = array[0];
+        int max = array[0];
+        int avg = 0;
 
-        System.out.println("max = " + String.format("%.2f", max));
-        System.out.println("min = " + String.format("%.2f", min));
-        System.out.println("avg = " + String.format("%.2f", avg));
+        for (int i = a; i < array.length; i++) {
+            if (array[i] < min)
+                min = array[i];
+            if (array[i] > max)
+                max = array[i];
+
+
+        }
+        int sum = Arrays.stream(array).sum();
+        avg = sum / array.length;
+
+        System.out.println("sum = " + sum);
+        System.out.println("max = " + max);
+        System.out.println("min = " + min);
+        System.out.println("avg = " + avg);
 
     }
 }
